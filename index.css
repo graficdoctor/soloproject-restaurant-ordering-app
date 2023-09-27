@@ -79,7 +79,7 @@ header p {
 
 .card {
 	display: grid;
-	grid-template-columns: 70px 1fr auto;
+	grid-template-columns: 70px minmax(0, 1fr) 40px;
 	align-items: center;
 	gap: 1em;
 	padding: 2em 0;
@@ -89,6 +89,7 @@ header p {
 .card--product {
 	display: flex;
 	flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .small {
@@ -111,8 +112,8 @@ button[data-type='add-order'] {
 	border: 1px solid var(--clr-neutral-800);
 	border-radius: 50%;
 	background-color: var(--clr-neutral-100);
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	display: grid;
 	place-content: center;
 	font-family: var(--ff-button-order);

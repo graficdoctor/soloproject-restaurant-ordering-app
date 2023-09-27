@@ -22,7 +22,7 @@ document.addEventListener('click', function (event) {
 });
 
 function loadMenuHtml() {
-	const menuFeedHtml = ``;
+	let menuFeedHtml = ``;
 	menuArray.forEach((menu) => {
 		menuFeedHtml += `
     	<div class="card">
@@ -114,4 +114,4 @@ paymentDetailsForm.addEventListener('submit', function (e) {
 	modal.style.display = 'none';
 });
 
-renderMenu()
+renderMenu();
