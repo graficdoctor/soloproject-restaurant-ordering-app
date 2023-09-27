@@ -8,23 +8,21 @@ const paymentDetailsForm = document.getElementById('payment-details-form');
 
 const itemsInCart = [];
 
-document.addEventListener('DOMContentLoaded', renderMenu);
-
-document.addEventListener('click', function (e) {
-	if (e.target.dataset.add) {
-		addItemToCart(e.target.dataset.add);
+document.addEventListener('click', function (event) {
+	if (event.target.dataset.add) {
+		addItemToCart(event.target.dataset.add);
 		renderOrders();
-	} else if (e.target.id === 'order-button') {
+	} else if (event.target.id === 'order-button') {
 		const modal = document.getElementById('modal');
 		modal.style.display = 'block';
-	} else if (e.target.dataset.remove) {
-		removeItemFromCart(e.target.dataset.remove);
+	} else if (event.target.dataset.remove) {
+		removeItemFromCart(event.target.dataset.remove);
 		renderOrders();
 	}
 });
 
 function loadMenuHtml() {
-	let menuFeedHtml = ``;
+	const menuFeedHtml = ``;
 	menuArray.forEach((menu) => {
 		menuFeedHtml += `
     	<div class="card">
@@ -57,7 +55,7 @@ function renderMenu() {
 }
 
 function addItemToCart(itemID) {
-	const itemObj = menuArray.filter(function (item) {
+	const itemObj = menuArray.filter((item) => {
 		return item.id === Number(itemID);
 	})[0];
 	itemsInCart.push(itemObj);
@@ -115,3 +113,5 @@ paymentDetailsForm.addEventListener('submit', function (e) {
   `;
 	modal.style.display = 'none';
 });
+
+renderMenu()
