@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Restaurant Ordering App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Smythe&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="index.css" />
+		<script src="app.js" type="module"></script>
+	</head>
+	<body>
+		<main class="flow">
+			<header>
+				<h1 class="clr-neutral-100">Jimmy’s Diner</h1>
+				<p class="clr-neutral-100">The best burgers and pizzas in town.</p>
+			</header>
+			<section class="wrapper cards" id="cards">
+				<!-- <div class="card">
+					<img
+						src="/images/pizza.png"
+						class="img"
+						alt="Pepperoni Pizza Slice"
+					/>
+					<div class="card--product">
+						<h2>Pizza</h2>
+						<p class="small">pepperoni,mushroom,mozarella</p>
+						<p class="price">$14</p>
+					</div>
+					<button type="button" data-type="add-order">
+						<img
+							src="/images/circle-plus.svg"
+							class="add-order"
+							alt="add order button"
+						/>
+					</button>
+				</div>
+				<div class="card">
+					<img src="/images/burger.png" class="img" alt="Triple Meat Burger" />
+					<div class="card--product">
+						<h2>Hamburger</h2>
+						<p class="small">beef, cheese, lettuce</p>
+						<p class="price">$12</p>
+					</div>
+					<button type="button" data-type="add-order">
+						<img
+							src="/images/circle-plus.svg"
+							class="add-order"
+							alt="add order button"
+						/>
+					</button>
+				</div>
+				<div class="card">
+					<img src="/images/beer.png" class="img" alt="Fresh pint of beer" />
+					<div class="card--product">
+						<h2>Beer</h2>
+						<p class="small">grain, hops, yeast, water</p>
+						<p class="price">$12</p>
+					</div>
+					<button type="button" data-type="add-order">
+						<img
+							src="/images/circle-plus.svg"
+							class="add-order"
+							alt="add order button"
+						/>
+					</button>
+				</div> -->
+			</section>
+			<section class="wrapper orders" id="orders">
+				<h2 class="text-align-center margin-bottom-16">Your order</h2>
+				<div class="order">
+					<h2>Pizza</h2>
+					<button type="button" data-type="remove-order" data-id="1">remove</button>
+					<p class="price">$14</p>
+				</div>
+				<div class="order">
+					<h2>Beer</h2>
+					<button type="button" data-type="remove-order" data-id="2">remove</button>
+					<p class="price">$12</p>
+				</div>
+				<div class="order--total">
+					<h2>Total price:</h2>
+					<p class="price">$26</p>
+				</div>
+				<button type="submit" id="order-button" data-type="complete-order">
+					complete order
+				</button>
+			</section>
+			<div class="modal wrapper" id="modal">
+				<h2>Enter card details</h2>
+				<form class="form-control" id="payment-details-form">
+					<input
+						type="text"
+						name="fullname"
+						id="fullname"
+						aria-label="fullname"
+						placeholder="Enter your name"
+						required
+					/>
+					<input
+						type="text"
+						name="cardnumber"
+						id="cardnumber"
+						aria-label="cardnumber"
+						placeholder="Enter Card Number"
+						required
+					/>
+					<input
+						type="text"
+						name="cvv"
+						id="cvv"
+						placeholder="Enter CVV"
+						aria-label="CVV"
+						required
+						maxlength="3"
+					/>
+					<button type="submit" id="pay-button" data-type="complete-order">
+						Pay
+					</button>
+				</form>
+			</div>
+			<!-- <div class="wrapper order-confirmed" id="order-confirmed">
+				<h2 class="text-align-center clr-primary-800 bg-primary-350 padding-24">
+					Thanks James! Your order is on its way.
+				</h2>
+			</div> -->
+		</main>
+	</body>
+</html>

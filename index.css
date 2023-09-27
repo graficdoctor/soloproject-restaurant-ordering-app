@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: inherit;
+}
+
+:root {
+	--clr-primary-350: hsla(160, 82%, 47%, 0.3);
+	--clr-primary-400: hsl(160, 82%, 47%);
+	--clr-primary-800: hsl(163, 88%, 20%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-800: hsl(0, 0%, 50%);
+	--clr-neutral-900: hsl(0, 0%, 0%);
+
+	--ff-primary: 'Smythe', cursive;
+	--ff-accent: 'Verdana', sans-serif;
+	--ff-button-order: 'Inter', sans-serif;
+}
+
+.img {
+	display: block;
+	max-width: 100%;
+	object-fit: cover;
+}
+
+/* Composition */
+
+html {
+	height: 100vh;
+}
+
+body {
+	font-family: var(--ff-primary);
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--clr-neutral-900);
+	display: grid;
+	place-items: center;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: min(90vw, 25rem);
+}
+
+header {
+	background-image: url('images/hero-image.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 2.5em 2.5em 4em;
+	margin: 0 auto;
+}
+
+.flow > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+h1,
+h2 {
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 2.438rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	line-height: 1.2;
+}
+
+header p {
+	font-size: 1.375rem;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 70px 1fr auto;
+	align-items: center;
+	gap: 1em;
+	padding: 2em 0;
+	border-bottom: 1px solid var(--clr-neutral-900);
+}
+
+.card--product {
+	display: flex;
+	flex-direction: column;
+}
+
+.small {
+	color: var(--clr-neutral-800);
+}
+
+.price {
+	font-size: 1.25rem;
+}
+
+button {
+	cursor: pointer;
+	border: transparent;
+	background: transparent;
+	font-family: var(--ff-accent);
+	transition: all ease 0.3s;
+}
+
+button[data-type='add-order'] {
+	border: 1px solid var(--clr-neutral-800);
+	border-radius: 50%;
+	background-color: var(--clr-neutral-100);
+	width: 50px;
+	height: 50px;
+	display: grid;
+	place-content: center;
+	font-family: var(--ff-button-order);
+	font-size: 2rem;
+	margin-left: auto;
+}
+
+button[data-type='add-order']:hover,
+button[data-type='add-order']:focus {
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-primary-400);
+	border-color: var(--clr-primary-400);
+	transform: rotate(90deg);
+}
+
+.add-order {
+	width: 40px;
+	height: 40px;
+}
+
+button[data-type='remove-order'] {
+	color: var(--clr-neutral-800);
+	font-size: 0.75rem;
+}
+
+button[data-type='remove-order']:hover,
+button[data-type='remove-order']:focus {
+	color: red;
+}
+
+button[data-type='complete-order'] {
+	font-weight: bold;
+	background-color: var(--clr-primary-400);
+	color: var(--clr-neutral-100);
+	padding: 1em;
+	border-radius: 3px;
+	text-transform: capitalize;
+	width: 100%;
+}
+
+button[data-type='complete-order']:hover,
+button[data-type='complete-order']:focus {
+	background-color: var(--clr-primary-800);
+}
+
+.orders {
+	display: none;
+}
+
+.order {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.order .price {
+	margin-left: auto;
+}
+
+.order--total {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1em 0;
+	border-top: 1px solid var(--clr-neutral-900);
+}
+
+.body {
+	position: relative;
+}
+
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1;
+	margin: auto;
+	display: none;
+
+	max-width: 20rem;
+	box-shadow: 5px 5px 255px var(--clr-neutral-800);
+	padding: 2.5rem 1.5rem;
+	background-color: var(--clr-neutral-100);
+	height: max-content;
+	border-radius: 3px;
+}
+
+.modal h2 {
+	font-family: var(--ff-accent);
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.form-control {
+	margin-top: 1.5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.form-control input {
+	font-family: var(--ff-accent);
+	padding: 1rem;
+}
+
+/* Utility */
+
+.clr-neutral-100 {
+	color: var(--clr-neutral-100);
+}
+
+.clr-primary-800 {
+	color: var(--clr-primary-800);
+}
+
+.bg-primary-350 {
+	background-color: var(--clr-primary-350);
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.margin-bottom-16 {
+	margin-bottom: 1em;
+}
+
+.padding-24 {
+	padding: 1.5rem;
+}
+
+/* Block */
+
+/* Exceptions */
